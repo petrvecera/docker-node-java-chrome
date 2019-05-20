@@ -1,4 +1,4 @@
-FROM node:10-jessie
+FROM node:10.5-jessie
 
 RUN sh -c 'echo "deb http://archive.debian.org/debian/ jessie-backports main contrib non-free" >> /etc/apt/sources.list.d/backports.list'
 RUN sh -c 'echo "deb-src http://archive.debian.org/debian/ jessie-backports main contrib non-free" >> /etc/apt/sources.list.d/backports.list'
