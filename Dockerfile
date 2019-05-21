@@ -2,6 +2,8 @@ FROM node:10.5-jessie
 
 RUN sh -c 'echo "deb http://archive.debian.org/debian/ jessie-backports main contrib non-free" >> /etc/apt/sources.list.d/backports.list'
 RUN sh -c 'echo "deb-src http://archive.debian.org/debian/ jessie-backports main contrib non-free" >> /etc/apt/sources.list.d/backports.list'
+RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
+
 RUN cat /etc/apt/sources.list.d/backports.list
 RUN echo 'Acquire::Check-Valid-Until no;' > /etc/apt/apt.conf.d/99no-check-valid-until
 RUN apt-get update
